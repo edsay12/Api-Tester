@@ -31,11 +31,3 @@ export const UserModel = db.define('User',{
     
 })
 
-UserModel.beforeCreate(async (user:any,options)=>{
-    user.name = 'bombinha'
-    user.password_hash = '12388'
-    
-    
-
-
-})

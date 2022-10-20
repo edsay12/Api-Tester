@@ -3,6 +3,6 @@ import SectionController from '../controller/SectionController';
 const userRouter = router()
 
 
-userRouter.post('/sessions',SectionController.store)
+userRouter.post('/user/create',SectionController.store)
 
 export default userRouter;
