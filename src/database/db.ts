@@ -7,7 +7,7 @@ export const db = new Sequelize(
     process.env.DATABASE_USERNAME,
     process.env.DATABASE_PASSWORD,{
         dialect:'sqlite',
-        storage:'../__test__',
+        storage:'database.sqlite',
         host:process.env.DATABASE_HOST,
         port:process.env.DATABASE_PORT
     }   

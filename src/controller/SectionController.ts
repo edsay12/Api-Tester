@@ -7,13 +7,14 @@ import {StatusCodes} from 'http-status-codes'
 class SectionController {
    async store(req: Request, res: Response) {
     const {name,email,password} = req.body
+    console.log(req.body)
 
     if(!validator.isEmail(email)) return res.sendStatus(StatusCodes.BAD_REQUEST);
     
     const user: any = await UserModel.create({
       name: name,
       email: email,
-      password_hash: password,
+      password: password,
     });
     if(user) return res.sendStatus(200)
   }

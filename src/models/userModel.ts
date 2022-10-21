@@ -12,9 +12,6 @@ export const UserModel = db.define('User',{
         autoIncrement:true,
         primaryKey:true
     },
-    password:{
-        type:DataType.VIRTUAL
-    },
     email:{
         type:DataType.STRING,
         allowNull:false,
@@ -24,7 +21,7 @@ export const UserModel = db.define('User',{
         type:DataType.STRING,
         allowNull:false
     },
-    password_hash:{
+    password:{
         type:DataType.STRING,
         allowNull:false
     },
