@@ -94,9 +94,7 @@ describe('User', () => {
         password:'12345678'
       })
       expect(response.status).toBe(StatusCodes.ACCEPTED)
-     
-
-      expect( typeof response.body.token === 'string').toBeTruthy()
+      expect(typeof response.body.token === 'string').toBeTruthy()
 
       
       
