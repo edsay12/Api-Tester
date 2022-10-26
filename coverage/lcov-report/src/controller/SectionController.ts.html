@@ -470,7 +470,7 @@ import { where } from "sequelize";
 class SectionController {
    async store(req: Request, res: Response) {
     const {name,email,password} = req.body
-    console.log(req.body)
+    
 &nbsp;
     if(!validator.isEmail(email)) return res.sendStatus(StatusCodes.BAD_REQUEST);
     if(!password) return res.status(StatusCodes.BAD_REQUEST).send({
@@ -494,14 +494,14 @@ class SectionController {
 &nbsp;
   async login(req:Request, res:Response) {
     const CompareUser:UserType = req.body;
-    console.log(req.body);
+    
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!CompareUser) <span class="cstat-no" title="statement not covered" >return res.status(StatusCodes.BAD_REQUEST);</span>
     try {
       const user:UserType | any = await UserModel.findOne({
         where :{ email : CompareUser.email}
         
       });
-      console.log(user.dataValues.password)
+      
 &nbsp;
       <span class="missing-if-branch" title="if path not taken" >I</span>if (user.length === 0) {
 <span class="cstat-no" title="statement not covered" >        return res.status(StatusCodes.BAD_REQUEST).json({</span>
@@ -602,7 +602,7 @@ class SectionController {
           },
           returning:true,
         })
-        console.log('usuario atualizado com sucesso');
+        
       } catch (e) {
 <span class="cstat-no" title="statement not covered" >        return res.status(StatusCodes.BAD_GATEWAY).json({</span>
           error:true,

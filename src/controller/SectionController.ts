@@ -9,7 +9,7 @@ import { where } from "sequelize";
 class SectionController {
   async store(req: Request, res: Response) {
     const { name, email, password } = req.body;
-    console.log(req.body);
+   
 
     //validations -----------------------------------------------------------------
     if (!validator.isEmail(email))
@@ -55,13 +55,13 @@ class SectionController {
 
   async login(req: Request, res: Response) {
     const CompareUser: UserType = req.body;
-    console.log(req.body);
+    
     if (!CompareUser) return res.status(StatusCodes.BAD_REQUEST);
     try {
       const user: UserType | any = await UserModel.findOne({
         where: { email: CompareUser.email },
       });
-      console.log(user.dataValues.password);
+      
 
       if (user.length === 0) {
         return res.status(StatusCodes.BAD_REQUEST).json({
@@ -167,7 +167,7 @@ class SectionController {
             returning: true,
           }
         );
-        console.log("usuario atualizado com sucesso");
+        
       } catch (e) {
         return res.status(StatusCodes.BAD_GATEWAY).json({
           error: true,
@@ -182,7 +182,7 @@ class SectionController {
         name: user.name,
       });
     } catch (error) {
-      console.log(error);
+      
       return res.status(StatusCodes.BAD_GATEWAY).json({
         error: true,
         message: "Database Error",

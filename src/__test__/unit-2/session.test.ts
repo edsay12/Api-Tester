@@ -25,7 +25,7 @@ describe('User', () => {
          
     })
 
-    test('Password dont be null', async ()=>{
+    test('Password dont be null', async () => {
       const response = await request(app)
       .post('/user/create')
       .send({
@@ -37,7 +37,7 @@ describe('User', () => {
          
     })
 
-    test('Password must have 8 or more caracters', async ()=>{
+    test('Password must have 8 or more caracters', async () => {
       const response = await request(app)
       .post('/user/create')
       .send({
@@ -48,7 +48,7 @@ describe('User', () => {
       expect(response.status).toBe(StatusCodes.BAD_REQUEST)
     })
 
-    test('User should create in db', async ()=>{
+    test('User should create in db', async () => {
       const response = await request(app)
       .post('/user/create')
       .send({
@@ -60,7 +60,7 @@ describe('User', () => {
       expect(response.status).toBe(StatusCodes.OK)
     })
 
-    test('Cant have 2 equals email in db', async ()=>{
+    test('Cant have 2 equals email in db', async () => {
       let response = await request(app)
       .post('/user/create')
       .send({
@@ -80,7 +80,7 @@ describe('User', () => {
       expect(response.status).toBe(StatusCodes.BAD_REQUEST)
     })
 
-    test('Should return a token if user exist', async()=>{
+    test('Should return a token if user exist', async () => {
       let response = await request(app)
       .post('/user/create')
       .send({
@@ -102,7 +102,7 @@ describe('User', () => {
       
     })
 
-    test('Should return a 404 error if user dont exists in db ', async()=>{
+    test('Should return a 404 error if user dont exists in db ', async () => {
       let response = await request(app)
       .post('/user/create')
       .send({
@@ -121,7 +121,7 @@ describe('User', () => {
 
     })
 
-    test('Should delete user', async()=>{
+    test('Should delete user', async ()=>{
       let response = await request(app)
       .post('/user/create')
       .send({
@@ -140,7 +140,7 @@ describe('User', () => {
 
     })
 
-    test('Id should be valid', async()=>{
+    test('Id should be valid', async ()=>{
       let response = await request(app)
       .post('/user/create')
       .send({
@@ -159,7 +159,7 @@ describe('User', () => {
       expect(response.status).toBe(StatusCodes.BAD_REQUEST)
     })
 
-    test('Should update user', async()=>{
+    test('Should update user', async ()=>{
       let response = await request(app)
       .post('/user/create')
       .send({
